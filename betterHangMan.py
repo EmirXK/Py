@@ -39,9 +39,10 @@ while i < length:
 i = 0
 
 lives_num = length * 2
-print("Lives_num: " + str(lives_num))
+print("\033[1;31mLives_num: ", end="")
+print("\033[1;00m", end="")
+print(str(lives_num))
 print("\n")
-
 num_correct = 0
 temp = 0
 guess = ''
@@ -55,7 +56,9 @@ while num_correct < length:
 
     while i < length:
         if check[i] == 1:
+            print("\033[1;36m", end="")
             print(words[rand_num][i], end="")
+            print("\033[1;00m", end="")
         else:
             print("-", end="")
         i += 1
@@ -83,7 +86,8 @@ while num_correct < length:
     if num_correct == temp:
         print("Wrong guess, ", end="")
         lives_num -= 1
-        print("Lives: " + str(lives_num))
+        print("\033[1;31mLives: ", end="")
+        print(lives_num)
 
     i = 0
     print("\n")
